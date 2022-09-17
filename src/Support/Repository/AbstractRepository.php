@@ -26,13 +26,13 @@ class AbstractRepository implements RepositoryInterface
         DB::rollBack();
     }
 
-    public function get(int $id)
+    public function get(int $idModel)
     {
-        return $this->model->find($id);
+        return $this->model->find($idModel);
     }
 
-    public function getOrFail(int $id)
+    public function getOrFail(int $idModel)
     {
-        return $this->model->findOrFail($id);
+        return $this->model->findOrFail($idModel);
     }
 }

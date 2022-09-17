@@ -8,7 +8,7 @@ interface RepositoryInterface
     public function beginTransaction(): void;
     public function commit(): void;
     public function rollback(): void;
-    public function get(int $id);
-    public function getOrFail(int $id);
+    public function get(int $idModel);
+    public function getOrFail(int $idModel);
 
 }

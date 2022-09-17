@@ -16,13 +16,13 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
         private ModelInterface $model
     ) {}
 
-    public function get(int $id)
+    public function get(int $idUserer)
     {
-        return $this->model->find($id);
+        return $this->model->find($idUserer);
     }
 
-    public function getOrFail(int $id)
+    public function getOrFail(int $idUserer)
     {
-        return $this->model->findOrFail($id);
+        return $this->model->findOrFail($idUserer);
     }
 }

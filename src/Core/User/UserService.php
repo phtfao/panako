@@ -11,13 +11,13 @@ class UserService
         private UserRepositoryInterface $repository
     ) {}
 
-    public function get(int $id)
+    public function get(int $idUser)
     {
-        return $this->repository->get($id);
+        return $this->repository->get($idUser);
     }
 
-    public function getOrFail(int $id)
+    public function getOrFail(int $idUser)
     {
-        return $this->repository->getOrFail($id);
+        return $this->repository->getOrFail($idUser);
     }
 }

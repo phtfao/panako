@@ -24,9 +24,9 @@ class TransactionService
         return $this->repository->store($data);
     }
 
-    public function get(int $id)
+    public function get(int $idTransaction)
     {
-        return $this->repository->get($id);
+        return $this->repository->get($idTransaction);
     }
 
     public function transfer(int $payer, int $payee, float $value): bool
@@ -97,6 +97,6 @@ class TransactionService
 
     public function notifyPayee($user): void
     {
-        //send email
+        //chamar serviço de fila de notificação
     }
 }

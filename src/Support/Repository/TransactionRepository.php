@@ -18,14 +18,14 @@ class TransactionRepository extends AbstractRepository implements TransactionRep
     {
         return $this->model->create($data);
     }
-    public function get(int $id): Transaction
+    public function get(int $idTransaction): Transaction
     {
-        return $this->model->find($id);
+        return $this->model->find($idTransaction);
     }
 
-    public function getOrFail(int $id): Transaction
+    public function getOrFail(int $idTransaction): Transaction
     {
-        return $this->model->findOrFail($id);
+        return $this->model->findOrFail($idTransaction);
     }
 
     public function transfer(int $payer, int $payee, float $value)
