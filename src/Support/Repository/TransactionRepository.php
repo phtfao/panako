@@ -25,11 +25,7 @@ class TransactionRepository extends AbstractRepository implements TransactionRep
 
     public function getOrFail(int $id): Transaction
     {
-        try {
-            return $this->model->findOrFail($id);
-        } catch (\Exception $e) {
-            throw new NotFoundException('Transação não encontrada.');
-        }
+        return $this->model->findOrFail($id);
     }
 
     public function transfer(int $payer, int $payee, float $value)
