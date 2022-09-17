@@ -3,20 +3,21 @@
 namespace Phtfao\Panako\Core\User;
 
 use Phtfao\Panako\Support\Repository\UserRepository;
+use Phtfao\Panako\Support\Contracts\UserRepositoryInterface;
 
 class UserService
 {
     public function __construct(
-        private UserRepository $repository
+        private UserRepositoryInterface $repository
     ) {}
 
-    public function get(int $id)
+    public function get(int $idUser)
     {
-        return $this->repository->get($id);
+        return $this->repository->get($idUser);
     }
 
-    public function getOrFail(int $id)
+    public function getOrFail(int $idUser)
     {
-        return $this->repository->getOrFail($id);
+        return $this->repository->getOrFail($idUser);
     }
 }

@@ -10,11 +10,12 @@ use Phtfao\Panako\Support\Exceptions\SelfTransferException;
 use Phtfao\Panako\Support\Repository\TransactionRepository;
 use Phtfao\Panako\Support\Exceptions\NotAuthorizedException;
 use Phtfao\Panako\Support\Exceptions\InsufficientBalanceException;
+use Phtfao\Panako\Support\Contracts\TransactionRepositoryInterface;
 
 class TransactionService
 {
     public function __construct(
-        private TransactionRepository $repository,
+        private TransactionRepositoryInterface $repository,
         private UserService $userService
     ) {}
 
@@ -23,9 +24,9 @@ class TransactionService
         return $this->repository->store($data);
     }
 
-    public function get(int $id)
+    public function get(int $idTransaction)
     {
-        return $this->repository->get($id);
+        return $this->repository->get($idTransaction);
     }
 
     public function transfer(int $payer, int $payee, float $value): bool
@@ -50,7 +51,7 @@ class TransactionService
 
             $this->repository->transfer($payerAccount->id, $payeeAccount->id, $value);
             $this->repository->commit();
-            dd($payerAccount->id,$payerAccount->balance);
+
             $this->notifyPayee($payeeAccount);
         } catch (\Exception $e) {
             $this->repository->rollBack();
@@ -96,6 +97,6 @@ class TransactionService
 
     public function notifyPayee($user): void
     {
-        //send email
+        //chamar serviço de fila de notificação
     }
 }

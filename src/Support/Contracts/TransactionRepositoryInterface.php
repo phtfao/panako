@@ -8,7 +8,7 @@ interface TransactionRepositoryInterface
 {
     public function __construct(Transaction $model);
     public function store(array $data);
-    public function get(int $id);
+    public function get(int $idTransaction);
     public function transfer(int $payer, int $payee, float $value);
 
 }

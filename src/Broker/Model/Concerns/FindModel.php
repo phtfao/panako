@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 trait FindModel 
 {
-    public function find(int $id)
+    public function find(int $idModel)
     {
-        return parent::find($id);
+        return parent::find($idModel);
     }
 
-    public function findOrFail(int $id)
+    public function findOrFail(int $idModel)
     {
         try {
-            return parent::findOrFail($id);
+            return parent::findOrFail($idModel);
         } catch (ModelNotFoundException $e) {
             throw new NotFoundException();
         }

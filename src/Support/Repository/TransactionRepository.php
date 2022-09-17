@@ -6,9 +6,9 @@ use Phtfao\Panako\Broker\Model\Transaction;
 use Phtfao\Panako\Support\Contracts\ModelInterface;
 use Phtfao\Panako\Support\Exceptions\NotFoundException;
 use Phtfao\Panako\Support\Repository\AbstractRepository;
-use Phtfao\Panako\Contracts\TransactionRepositoryInterface;
+use Phtfao\Panako\Support\Contracts\TransactionRepositoryInterface;
 
-class TransactionRepository extends AbstractRepository #implements TransactionRepositoryInterface
+class TransactionRepository extends AbstractRepository implements TransactionRepositoryInterface
 {
     public function __construct(
         private ModelInterface $model
@@ -18,18 +18,14 @@ class TransactionRepository extends AbstractRepository #implements TransactionRe
     {
         return $this->model->create($data);
     }
-    public function get(int $id): Transaction
+    public function get(int $idTransaction): Transaction
     {
-        return $this->model->find($id);
+        return $this->model->find($idTransaction);
     }
 
-    public function getOrFail(int $id): Transaction
+    public function getOrFail(int $idTransaction): Transaction
     {
-        try {
-            return $this->model->findOrFail($id);
-        } catch (\Exception $e) {
-            throw new NotFoundException('Transação não encontrada.');
-        }
+        return $this->model->findOrFail($idTransaction);
     }
 
     public function transfer(int $payer, int $payee, float $value)
@@ -39,7 +35,7 @@ class TransactionRepository extends AbstractRepository #implements TransactionRe
             'payee_id' => $payee,
             'value' => $value
         ];
-        dd($arrData);
+
         return $this->store($arrData);
     }
 }

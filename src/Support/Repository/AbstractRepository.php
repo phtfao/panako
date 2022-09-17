@@ -13,26 +13,26 @@ class AbstractRepository implements RepositoryInterface
     ) {}
     public function beginTransaction(): void
     {
-        //DB::beginTransaction();
+        DB::beginTransaction();
     }
 
     public function commit(): void
     {
-        //DB::commit();
+        DB::commit();
     }
 
     public function rollback(): void
     {
-        //DB::rollBack();
+        DB::rollBack();
     }
 
-    public function get(int $id)
+    public function get(int $idModel)
     {
-        return $this->model->find($id);
+        return $this->model->find($idModel);
     }
 
-    public function getOrFail(int $id)
+    public function getOrFail(int $idModel)
     {
-        return $this->model->findOrFail($id);
+        return $this->model->findOrFail($idModel);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Phtfao\Panako\Broker\Model;
 
-use App\Model\User as UserModel;
+use App\Models\User as UserModel;
 use Phtfao\Panako\Broker\Model\Concerns\FindModel;
 use Phtfao\Panako\Support\Contracts\ModelInterface;
 use Phtfao\Panako\Support\Contracts\AccountInterface;
