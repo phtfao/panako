@@ -1,0 +1,23 @@
+{
+    "name": "phtfao/panako",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^7.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "Phtfao\\Panako\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Paulo Henrique Tameirão Fonseca Araújo de Oliveira",
+            "email": "phtfao@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
