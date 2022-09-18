@@ -2,7 +2,7 @@
 
 namespace Phtfao\Panako\Broker\Model;
 
-use App\Model\Transaction as TransactionModel;
+use App\Models\Transaction as TransactionModel;
 use Phtfao\Panako\Broker\Model\Concerns\FindModel;
 use Phtfao\Panako\Support\Contracts\ModelInterface;
 
@@ -16,7 +16,7 @@ class Transaction extends TransactionModel implements ModelInterface
         parent::__construct();
     }
 
-    public function create(array $data): bool
+    public function create(array $data)
     {
         return parent::create($data);
     }

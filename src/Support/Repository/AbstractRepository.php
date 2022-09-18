@@ -13,17 +13,17 @@ class AbstractRepository implements RepositoryInterface
     ) {}
     public function beginTransaction(): void
     {
-        //DB::beginTransaction();
+        DB::beginTransaction();
     }
 
     public function commit(): void
     {
-        //DB::commit();
+        DB::commit();
     }
 
     public function rollback(): void
     {
-        //DB::rollBack();
+        DB::rollBack();
     }
 
     public function get(int $id)
