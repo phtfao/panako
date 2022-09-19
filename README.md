@@ -19,7 +19,7 @@ Após subir os container, rode o script de configuração (dentro do contaiber):
 docker exec -it panako-php-fpm-1 sh start.sh 
 ```
 
-Para executar os teste:
+Para executar os testes:
 ```
 docker exec -it panako-php-fpm-1 composer test
 ```
