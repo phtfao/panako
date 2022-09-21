@@ -26,7 +26,7 @@ docker exec -it panako-php-fpm-1 composer test
 
 Para execução em ambiente sem o docker os requisitos são:
 - PHP 8.1
-- Estensão SQLite
+- Extensão SQLite
 - Composer 2.4
 <!-- pagebreak -->
 
